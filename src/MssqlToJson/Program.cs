@@ -21,10 +21,10 @@ namespace MssqlToJson
         [Option('s', "sqlfile", Required = false, HelpText = "The file which contains the query to run against the db.")]
         public string SqlFile { get; set; }
 
-        [Option('b', "batch", Required = false, HelpText = "The number of records held in memeory before being flushed to disk.")]
+        [Option('b', "batch", Required = false, HelpText = "The number of records held in memory before being flushed to disk.")]
         public long BatchSize { get; set; } = 1000;
 
-        [Option('p', "partition", Required = false, HelpText = "The number fo records to partiton the files by i.e. write 1,000,00 records to each partition file.")]
+        [Option('p', "partition", Required = false, HelpText = "The number of records to partition the files by i.e. write 1,000,00 records to each partition file.")]
         public long PartitionSize { get; set; } = 1000000;
 
         [Option('f', "filename", Required = true, HelpText = @"The output file name. {0} represents the date literal e.g. {0:yyyy-MM-dd} or {0:dd_HH_mm_ss} and {1} the partition. The timestamp is set at the start of the process.")]
