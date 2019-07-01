@@ -111,7 +111,7 @@ namespace MssqlToJson
                 throw new Exception("You must specify a connection to execute a query (appsetting or arguments).");
             }
 
-            if (!string.IsNullOrEmpty(options.Query) && !string.IsNullOrEmpty(ConfigurationManager.AppSettings["Connection"]))
+            if (!string.IsNullOrEmpty(options.Connection) && !string.IsNullOrEmpty(ConfigurationManager.AppSettings["Connection"]))
             {
                 throw new Exception("You cannot specify a connection in the appsettings and arguments");
             }
