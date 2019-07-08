@@ -44,7 +44,10 @@ namespace MssqlToJson
 
             using (SqlConnection con = new SqlConnection(connection))
             {
-                SqlCommand command = new SqlCommand(query, con);
+                SqlCommand command = new SqlCommand(query, con)
+                {
+                    CommandTimeout = 60 * 60 * 5
+                };
                 con.Open();
 
                 var dr = command.ExecuteReader();
